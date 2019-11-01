@@ -3,12 +3,13 @@ void setup()
 {
 	size(800,600);
 	noStroke();
+	frameRate(60);
 	for(int i = 0; i < parts.length; i++)
 	{
 		parts[i] = new Particle();
-		parts[0] = new OddballParticle();
-	}
+		parts[0] == new OddballParticle();
 
+	}
 }
 void draw()
 {
@@ -19,12 +20,7 @@ void draw()
 		parts[i].show();
 		
 	}
-	if(millis()%10 == 0)
-	{
-		Particle part = new Particle();
-		part.move();
-		part.show();
-	}
+
 }
 class Particle
 {
@@ -47,7 +43,7 @@ class Particle
 	void show()
 	{
 		fill(myColor);
-		ellipse((float)myX,(float)myY,4,4);
+		ellipse((float)myX,(float)myY,4,3);
 	}
 }
 class OddballParticle extends Particle
@@ -56,8 +52,7 @@ class OddballParticle extends Particle
 	{
 		myX = 400;
 		myY = 300;
-		mySpeed = Math.random()*5;
-		myAngle = Math.random()*Math.PI;
+		mySpeed = Math.random()*2;
 		myColor = color(255,0,0);
 	}
 	void move()
